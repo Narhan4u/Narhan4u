@@ -1,0 +1,27 @@
+{
+  "starting_balance_gbp": 20.0,
+  "risk_per_trade_pct": 3.0,
+  "max_open_positions": 3,
+  "default_stop_loss_pct": 3.0,
+  "default_take_profit_pct": 6.0,
+  "move_stop_to_breakeven_at_r": 1.0,
+  "account_stop_gbp": 15.0,
+  "lock_in_profit_at_gbp": 30.0,
+  "daily_loss_limit_pct": 10.0,
+  "pause_after_consecutive_losses": 3,
+  "pause_hours": 24,
+  "drop_trader_if_drawdown_pct": 20.0,
+  "drop_trader_min_trades": 10,
+  "fee_pct_per_side": 0.1,
+  "poll_seconds": 60,
+  "price_source": "coingecko",
+  "coingecko_ids": {
+    "BTC": "bitcoin",
+    "ETH": "ethereum",
+    "SOL": "solana",
+    "BNB": "binancecoin",
+    "XRP": "ripple",
+    "DOGE": "dogecoin",
+    "ADA": "cardano"
+  }
+}
