@@ -6,6 +6,11 @@ keys and never moves real money. It copies trade signals you paste into
 signals.csv using fake money, applies the risk rules in config.json and keeps
 running until you create a file called STOP in this folder (or press Ctrl+C).
 
+Signals come from two places:
+  * signals.csv - trades you type in from a trader's posts on X
+  * follow_wallets in config.json - Hyperliquid wallets (the exchange Invo
+    uses) whose new trades are copied automatically from public data
+
 Usage:
     python3 copytrader.py              # run until STOP file appears
     python3 copytrader.py --sim        # offline: simulated random-walk prices
@@ -20,6 +25,8 @@ import random
 import sys
 import time
 import urllib.request
+
+import hyperliquid as hl
 from datetime import datetime, timezone
 
 HERE = os.path.dirname(os.path.abspath(__file__))
@@ -71,6 +78,8 @@ def fresh_state(cfg):
         "day_start_equity": cfg["starting_balance_gbp"],
         "consecutive_losses": 0,
         "sim_prices": {},
+        "follow_cursor": {},
+        "last_tick": None,
     }
 
 
@@ -86,7 +95,20 @@ class Prices:
             return {}
         if self.sim:
             return self._sim(symbols)
+        if self.cfg["price_source"] == "hyperliquid":
+            return self._hyperliquid(symbols)
         return self._coingecko(symbols)
+
+    def _hyperliquid(self, symbols):
+        try:
+            mids = hl.all_mids()
+        except Exception as e:
+            log(f"WARN price fetch failed: {e}")
+            return {}
+        for s in symbols:
+            if s not in mids:
+                log(f"WARN {s} is not a Hyperliquid market")
+        return {s: mids[s] for s in symbols if s in mids}
 
     def _sim(self, symbols):
         out = {}
@@ -146,6 +168,60 @@ class Engine:
             rows = [r for r in csv.DictReader(f) if r.get("id")]
         return [r for r in rows if r["id"] not in self.s["seen_signals"]]
 
+    def follow_wallets(self):
+        """Turn new fills from followed Hyperliquid wallets into signals.
+
+        On the first run for a wallet we start from *now*, so old trades are
+        never copied late at stale prices."""
+        opens, closes = [], []
+        cur = self.s.setdefault("follow_cursor", {})
+        for name, addr in self.cfg.get("follow_wallets", {}).items():
+            if not addr or not addr.startswith("0x"):
+                continue
+            if addr not in cur:
+                cur[addr] = int(now().timestamp() * 1000)
+                log(f"FOLLOW {name} ({addr[:6]}...{addr[-4:]}): copying trades from now on")
+                continue
+            try:
+                fills = hl.user_fills(addr, cur[addr] + 1)
+            except Exception as e:
+                log(f"WARN could not read fills for {name}: {e}")
+                continue
+            for f in fills:
+                cur[addr] = max(cur[addr], f["time"])
+                d = f.get("dir", "")
+                coin = f.get("coin", "")
+                if coin.startswith("@") or ":" in coin:   # spot / other dex: skip
+                    continue
+                if d.startswith("Close") or ">" in d:
+                    closes.append((name, coin.upper()))
+                if d.startswith("Open") or ">" in d:
+                    side = "long" if ("Long" in d.split(">")[-1]) else "short"
+                    opens.append({"id": f"hl-{f.get('tid')}", "trader": name,
+                                  "symbol": coin.upper(), "side": side,
+                                  "stop_loss": "", "take_profit": "", "note": d})
+        return opens, closes
+
+    def apply_trader_closes(self, closes, px):
+        for trader, sym in closes:
+            for p in list(self.s["open"]):
+                if p["trader"] == trader and p["symbol"] == sym:
+                    price = px.get(sym, p["last_price"])
+                    self.close_position(p, price, f"{trader} closed")
+
+    def charge_funding(self):
+        rate = self.cfg.get("funding_pct_per_hour", 0) / 100
+        t = now().timestamp()
+        last = self.s.get("last_tick") or t
+        hours = max(0.0, (t - last) / 3600)
+        self.s["last_tick"] = t
+        if not rate or not hours:
+            return
+        for p in self.s["open"]:
+            cost = p["notional"] * rate * hours
+            p["fees"] += cost
+            self.s["cash"] -= cost
+
     def trader_stats(self, trader=None):
         trades = [t for t in self.s["closed"] if trader is None or t["trader"] == trader]
         wins = [t["pnl"] for t in trades if t["pnl"] > 0]
@@ -175,6 +251,9 @@ class Engine:
             return f"paused until {self.s['paused_until']}"
         if sig["trader"] in self.s["dropped_traders"]:
             return f"trader {sig['trader']} was dropped for bad drawdown"
+        if any(p["trader"] == sig["trader"] and p["symbol"] == sig["symbol"].upper()
+               for p in self.s["open"]):
+            return "already copying this trader on this coin"
         if len(self.s["open"]) >= self.cfg["max_open_positions"]:
             return "max open positions reached"
         if sig["side"] not in ("long", "short"):
@@ -201,19 +280,21 @@ class Engine:
             return True
         stop_dist = abs(price - sl) / price
         risk_gbp = eq * self.cfg["risk_per_trade_pct"] / 100
-        # no leverage, and share the account fairly between position slots
+        # leverage capped (default 1x = none); account shared between slots
+        lev = max(1.0, float(self.cfg.get("max_leverage", 1)))
         notional = min(risk_gbp / stop_dist,
-                       eq / self.cfg["max_open_positions"],
-                       self.s["cash"] * 0.95)
+                       eq * lev / self.cfg["max_open_positions"],
+                       self.s["cash"] * 0.95 * lev)
         if notional < 1:
             log(f"SKIP signal {sig['id']} {sym}: position would be under £1")
             return True
         fee = self.fee(notional)
-        self.s["cash"] -= notional + fee
+        margin = notional / lev
+        self.s["cash"] -= margin + fee
         pos = {
             "id": sig["id"], "trader": sig["trader"], "symbol": sym, "side": sig["side"],
             "entry": price, "stop": sl, "target": tp, "initial_stop": sl,
-            "notional": notional, "margin": notional, "fees": fee,
+            "notional": notional, "margin": margin, "fees": fee,
             "opened": now().isoformat(), "last_price": price,
         }
         self.s["open"].append(pos)
@@ -318,8 +399,13 @@ class Engine:
 
     def tick(self):
         new = self.read_signals()
-        symbols = [p["symbol"] for p in self.s["open"]] + [n["symbol"] for n in new]
+        hl_opens, hl_closes = self.follow_wallets()
+        new += hl_opens
+        symbols = ([p["symbol"] for p in self.s["open"]] + [n["symbol"] for n in new]
+                   + [c[1] for c in hl_closes])
         px = self.prices.get(symbols)
+        self.charge_funding()
+        self.apply_trader_closes(hl_closes, px)
         self.manage(px)
         for sig in new:
             sig["side"] = sig["side"].strip().lower()
