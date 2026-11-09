@@ -97,8 +97,10 @@ p { margin: 0 0 1em; }
 .hero {
   position: relative; color: #fff; overflow: hidden;
   background:
-    radial-gradient(1200px 600px at 85% 10%, rgba(228,82,27,.35), transparent 60%),
-    radial-gradient(800px 500px at 0% 100%, rgba(242,177,52,.18), transparent 60%),
+    linear-gradient(90deg, rgba(20,13,10,.95) 0%, rgba(20,13,10,.84) 42%, rgba(20,13,10,.5) 100%),
+    linear-gradient(0deg, rgba(20,13,10,.9) 0%, rgba(20,13,10,0) 30%),
+    radial-gradient(1200px 600px at 85% 10%, rgba(228,82,27,.28), transparent 60%),
+    url("images/stall.jpg") center 30% / cover no-repeat fixed,
     var(--ink);
   padding: 140px 0 0;
 }
@@ -485,3 +487,14 @@ body.no-scroll { overflow: hidden; }
   .modal__panel { width: 100%; max-height: 92vh; border-radius: 22px 22px 0 0; }
   .basket-btn { right: 12px; left: 12px; bottom: 80px; justify-content: space-between; }
 }
+
+/* Hero photo: scrolls normally on phones/tablets (fixed backgrounds are unreliable there) and uses a smaller file */
+@media (max-width: 900px), (hover: none) {
+  .hero {
+    background:
+      linear-gradient(180deg, rgba(20,13,10,.78) 0%, rgba(20,13,10,.9) 55%, rgba(20,13,10,.97) 100%),
+      url("images/stall-960.jpg") center top / cover no-repeat,
+      var(--ink);
+  }
+}
+@media (prefers-reduced-motion: reduce) { .hero { background-attachment: scroll; } }
