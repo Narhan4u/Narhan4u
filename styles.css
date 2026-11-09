@@ -360,3 +360,14 @@ details p { color: var(--muted); padding-bottom: 12px; }
 @media (max-width: 640px) {
   .mix__builder { padding: 24px 20px; }
 }
+.chip--card span { display: flex; flex-direction: column; border-radius: 16px; padding: .8em 1.2em; text-align: left; }
+.chip--card b { font-family: var(--display); font-size: 1.05rem; }
+.chip--card small { font-weight: 500; font-size: .8rem; color: var(--muted); }
+.chip--card input:checked + span small { color: var(--muted-light); }
+.toggle { display: inline-flex; align-items: center; gap: 10px; margin-top: 14px; font-weight: 700; font-size: .95rem; cursor: pointer; }
+.toggle input { position: absolute; opacity: 0; }
+.toggle span { width: 42px; height: 24px; border-radius: 999px; background: #dccab4; position: relative; transition: background .2s; }
+.toggle span::after { content: ""; position: absolute; top: 3px; left: 3px; width: 18px; height: 18px; border-radius: 50%; background: #fff; transition: transform .2s; }
+.toggle input:checked + span { background: var(--green); }
+.toggle input:checked + span::after { transform: translateX(18px); }
+.toggle input:focus-visible + span { outline: 3px solid var(--flame); outline-offset: 2px; }

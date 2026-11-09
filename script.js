@@ -104,6 +104,7 @@
     function plate() {
       var f = mixForm.elements;
       var extras = Array.prototype.filter.call(mixForm.querySelectorAll('input[name="extra"]:checked'), function () { return true; }).map(function (i) { return i.value; });
+      if (f.coleslaw.checked) extras.unshift("Free coleslaw");
       return { base: f.base.value, protein: f.protein.value, extras: extras, heat: f.heat.value };
     }
     function render() {
