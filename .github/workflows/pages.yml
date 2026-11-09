@@ -30,6 +30,7 @@ jobs:
           mkdir _site
           cp index.html styles.css script.js _site/
           cp -r images _site/
+          cp CNAME _site/
       - uses: actions/upload-pages-artifact@v3
         with:
           path: _site
