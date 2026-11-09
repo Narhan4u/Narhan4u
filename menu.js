@@ -23,7 +23,7 @@ var SPICE = {
   options: [{ name: "Mild" }, { name: "Medium" }, { name: "Naija hot 🌶🌶🌶" }]
 };
 var COLESLAW = { name: "Free coleslaw", required: false, options: [{ name: "Free coleslaw" }] };
-var EXTRAS = { name: "Add a little extra", required: false, options: [{ name: "Meat Pie" }, { name: "Puff Puff" }] };
+var EXTRAS = { name: "Add a little extra", required: false, options: [{ name: "Meat Pie", price: 1.99 }, { name: "Puff Puff (3)", price: 1.50 }] };
 
 var MENU = [
   {
