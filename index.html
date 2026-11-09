@@ -1,0 +1,486 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Samfik Foods | Authentic Nigerian Food in Macclesfield</title>
+  <meta name="description" content="Samfik Foods brings authentic Nigerian food to Macclesfield Market Hall. Smoky jollof rice, chicken & lamb suya, peppered chicken, meat pies and puff puff. Takeaway, pre-orders & party catering.">
+  <meta name="theme-color" content="#140d0a">
+  <meta property="og:title" content="Samfik Foods | Authentic Nigerian Food in Macclesfield">
+  <meta property="og:description" content="Smoky jollof, fiery suya and golden puff puff, served fresh at Macclesfield Market Hall.">
+  <meta property="og:type" content="website">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,700;0,9..144,900;1,9..144,500&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Restaurant",
+    "name": "Samfik Foods",
+    "servesCuisine": ["Nigerian", "West African"],
+    "telephone": "+44 7404 531445",
+    "priceRange": "££",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Unit B4, Macclesfield Market Hall, Grosvenor Centre",
+      "addressLocality": "Macclesfield",
+      "postalCode": "SK11 6AJ",
+      "addressCountry": "GB"
+    },
+    "openingHoursSpecification": [{
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],
+      "opens": "10:00",
+      "closes": "16:30"
+    }]
+  }
+  </script>
+</head>
+<body>
+
+  <!-- ============ NAV ============ -->
+  <header class="nav" id="nav">
+    <div class="container nav__inner">
+      <a href="#top" class="logo" aria-label="Samfik Foods home">
+        <span class="logo__mark">S</span>
+        <span class="logo__text">Samfik<em>Foods</em></span>
+      </a>
+      <nav class="nav__links" id="navLinks" aria-label="Main">
+        <a href="#menu">Menu</a>
+        <a href="#services">Services</a>
+        <a href="#why">Why Us</a>
+        <a href="#reviews">Reviews</a>
+        <a href="#visit">Visit</a>
+        <a href="#faq">FAQ</a>
+      </nav>
+      <div class="nav__cta">
+        <span class="open-badge" id="openBadge"><i></i><b>Checking hours…</b></span>
+        <a href="tel:+447404531445" class="btn btn--primary btn--sm">Call to Order</a>
+        <button class="nav__toggle" id="navToggle" aria-label="Open menu" aria-expanded="false"><span></span><span></span></button>
+      </div>
+    </div>
+  </header>
+
+  <main id="top">
+
+    <!-- ============ HERO ============ -->
+    <section class="hero">
+      <div class="hero__glow" aria-hidden="true"></div>
+      <div class="container hero__grid">
+        <div class="hero__copy reveal">
+          <p class="eyebrow"><span class="flag" aria-hidden="true"></span> Authentic Nigerian · Macclesfield Market Hall</p>
+          <h1>Real Naija flavour.<br><span class="hl">Right here</span> in Macclesfield.</h1>
+          <p class="lede">Smoky party jollof, fire-kissed suya and warm, sugar-dusted puff puff, cooked the way it's done back home. Grab it hot from our stall or pre-order for your next celebration.</p>
+          <div class="hero__actions">
+            <a href="#menu" class="btn btn--primary">See the Menu</a>
+            <a href="tel:+447404531445" class="btn btn--ghost">
+              <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg>
+              07404 531445
+            </a>
+          </div>
+          <ul class="hero__facts">
+            <li><strong>Mon–Sat</strong><span>10:00 – 4:30</span></li>
+            <li><strong>Unit B4</strong><span>Market Hall</span></li>
+            <li><strong>Party trays</strong><span>Pre-order now</span></li>
+          </ul>
+        </div>
+
+        <!-- Contact / order form -->
+        <div class="hero__form reveal" id="order">
+          <form class="card form" id="leadForm" novalidate>
+            <div class="form__head">
+              <span class="pill">Fast reply on WhatsApp</span>
+              <h2>Order, pre-order or book catering</h2>
+              <p>Tell us what you're craving. We'll confirm price and pickup time.</p>
+            </div>
+            <div class="form__row">
+              <label>Your name
+                <input type="text" name="name" placeholder="e.g. Ada Okafor" required autocomplete="name">
+              </label>
+              <label>Phone
+                <input type="tel" name="phone" placeholder="07…" required autocomplete="tel">
+              </label>
+            </div>
+            <label>I'm interested in
+              <select name="type" required>
+                <option value="Takeaway pre-order">Takeaway pre-order</option>
+                <option value="Party / event catering">Party / event catering</option>
+                <option value="Office lunch order">Office lunch order</option>
+                <option value="General question">General question</option>
+              </select>
+            </label>
+            <div class="form__row">
+              <label>Date needed
+                <input type="date" name="date">
+              </label>
+              <label>No. of people
+                <input type="number" name="people" min="1" placeholder="e.g. 20">
+              </label>
+            </div>
+            <label>Your order / message
+              <textarea name="message" rows="3" placeholder="2x jollof & chicken, 1x lamb suya, 10 puff puff…"></textarea>
+            </label>
+            <button type="submit" class="btn btn--primary btn--block">Send My Request →</button>
+            <p class="form__note" id="formNote">Opens WhatsApp with your details ready to send. Prefer to talk? <a href="tel:+447404531445">Call us</a>.</p>
+          </form>
+        </div>
+      </div>
+
+      <!-- Food ticker -->
+      <div class="ticker" aria-hidden="true">
+        <div class="ticker__track">
+          <span>Jollof Rice</span><span>✦</span><span>Chicken Suya</span><span>✦</span><span>Lamb Suya</span><span>✦</span><span>Peppered Turkey</span><span>✦</span><span>Loaded Fries</span><span>✦</span><span>Meat Pies</span><span>✦</span><span>Puff Puff</span><span>✦</span>
+          <span>Jollof Rice</span><span>✦</span><span>Chicken Suya</span><span>✦</span><span>Lamb Suya</span><span>✦</span><span>Peppered Turkey</span><span>✦</span><span>Loaded Fries</span><span>✦</span><span>Meat Pies</span><span>✦</span><span>Puff Puff</span><span>✦</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ MENU ============ -->
+    <section class="section" id="menu">
+      <div class="container">
+        <div class="section__head reveal">
+          <p class="eyebrow">The Menu</p>
+          <h2>Our crowd favourites</h2>
+          <p>Every plate is seasoned with our own spice blends and cooked fresh at the stall. Here's what Macclesfield keeps coming back for.</p>
+        </div>
+
+        <div class="menu-tabs reveal" role="tablist">
+          <button class="tab is-active" data-filter="all">All</button>
+          <button class="tab" data-filter="mains">Mains</button>
+          <button class="tab" data-filter="grill">Grill & Pepper</button>
+          <button class="tab" data-filter="snacks">Snacks & Sides</button>
+        </div>
+
+        <div class="menu-grid">
+          <!-- To use real photos: save them in /images with the filenames below. Until then a styled gradient shows. -->
+          <article class="dish reveal" data-cat="mains">
+            <div class="dish__img" style="--img:url('images/jollof.jpg'); --g1:#e2531b; --g2:#7a1d06">
+              <span class="dish__tag">Bestseller</span>
+            </div>
+            <div class="dish__body">
+              <h3>Nigerian Jollof Rice</h3>
+              <p>Long-grain rice slow-cooked in a rich tomato & pepper base until smoky. Proper party jollof.</p>
+              <div class="dish__meta"><span class="heat">🌶🌶</span><a href="#order" class="dish__cta" data-dish="Jollof Rice">Order →</a></div>
+            </div>
+          </article>
+
+          <article class="dish reveal" data-cat="grill">
+            <div class="dish__img" style="--img:url('images/chicken-suya.jpg'); --g1:#b5461a; --g2:#3b1407">
+              <span class="dish__tag">Street classic</span>
+            </div>
+            <div class="dish__body">
+              <h3>Chicken Suya</h3>
+              <p>Tender chicken skewers rubbed in yaji, our peanut-chilli suya spice, then flame-grilled.</p>
+              <div class="dish__meta"><span class="heat">🌶🌶🌶</span><a href="#order" class="dish__cta" data-dish="Chicken Suya">Order →</a></div>
+            </div>
+          </article>
+
+          <article class="dish reveal" data-cat="grill">
+            <div class="dish__img" style="--img:url('images/lamb-suya.jpg'); --g1:#8f2d12; --g2:#2a0d05">
+              <span class="dish__tag">Must try</span>
+            </div>
+            <div class="dish__body">
+              <h3>Lamb Suya</h3>
+              <p>Thin-sliced lamb, deeply spiced and charred at the edges. Served with onions and extra yaji.</p>
+              <div class="dish__meta"><span class="heat">🌶🌶🌶</span><a href="#order" class="dish__cta" data-dish="Lamb Suya">Order →</a></div>
+            </div>
+          </article>
+
+          <article class="dish reveal" data-cat="grill">
+            <div class="dish__img" style="--img:url('images/peppered-chicken.jpg'); --g1:#c7321d; --g2:#4a0e07"></div>
+            <div class="dish__body">
+              <h3>Peppered Chicken & Turkey</h3>
+              <p>Fried until golden, then tossed in a fiery scotch-bonnet pepper sauce. Pick chicken or turkey.</p>
+              <div class="dish__meta"><span class="heat">🌶🌶🌶</span><a href="#order" class="dish__cta" data-dish="Peppered Chicken / Turkey">Order →</a></div>
+            </div>
+          </article>
+
+          <article class="dish reveal" data-cat="snacks">
+            <div class="dish__img" style="--img:url('images/loaded-fries.jpg'); --g1:#e0a01e; --g2:#7a3d06">
+              <span class="dish__tag">Naija twist</span>
+            </div>
+            <div class="dish__body">
+              <h3>Loaded Fries</h3>
+              <p>Crispy fries piled high with suya meat, peppers and sauce. Comfort food with a kick.</p>
+              <div class="dish__meta"><span class="heat">🌶</span><a href="#order" class="dish__cta" data-dish="Loaded Fries">Order →</a></div>
+            </div>
+          </article>
+
+          <article class="dish reveal" data-cat="snacks">
+            <div class="dish__img" style="--img:url('images/meat-pie.jpg'); --g1:#d8a65a; --g2:#6b3d12"></div>
+            <div class="dish__body">
+              <h3>Nigerian Meat Pies</h3>
+              <p>Buttery, flaky pastry packed with seasoned minced meat, potato and carrot. Perfect on the go.</p>
+              <div class="dish__meta"><span class="heat mild">Mild</span><a href="#order" class="dish__cta" data-dish="Meat Pies">Order →</a></div>
+            </div>
+          </article>
+
+          <article class="dish reveal" data-cat="snacks">
+            <div class="dish__img" style="--img:url('images/puff-puff.jpg'); --g1:#f0b448; --g2:#8a4a10">
+              <span class="dish__tag">Sweet treat</span>
+            </div>
+            <div class="dish__body">
+              <h3>Puff Puff</h3>
+              <p>Soft, pillowy, lightly sweet dough balls fried golden. Impossible to stop at one.</p>
+              <div class="dish__meta"><span class="heat mild">Sweet</span><a href="#order" class="dish__cta" data-dish="Puff Puff">Order →</a></div>
+            </div>
+          </article>
+
+          <article class="dish dish--cta reveal" data-cat="mains">
+            <div class="dish__body">
+              <p class="eyebrow">Feeding a crowd?</p>
+              <h3>Party trays & platters</h3>
+              <p>Jollof, peppered meats, suya and puff puff by the tray, ready for birthdays, office lunches and family gatherings.</p>
+              <a href="#order" class="btn btn--primary" data-type="Party / event catering">Get a Quote</a>
+            </div>
+          </article>
+        </div>
+        <p class="menu-note reveal">Menu changes with the day. Call <a href="tel:+447404531445">07404 531445</a> to check today's specials and prices.</p>
+      </div>
+    </section>
+
+    <!-- ============ SERVICES ============ -->
+    <section class="section section--dark" id="services">
+      <div class="container">
+        <div class="section__head reveal">
+          <p class="eyebrow">Services</p>
+          <h2>However you're hungry, we've got you</h2>
+        </div>
+        <div class="services">
+          <div class="service reveal">
+            <div class="service__icon">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16l-1.5 12.5a2 2 0 0 1-2 1.5h-9a2 2 0 0 1-2-1.5zM8 7V5a4 4 0 0 1 8 0v2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <h3>Walk-in Takeaway</h3>
+            <p>Stop by Unit B4 in Macclesfield Market Hall and grab a hot plate, Monday to Saturday.</p>
+          </div>
+          <div class="service reveal">
+            <div class="service__icon">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M12 7v5l3 2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+            </div>
+            <h3>Pre-Order & Collect</h3>
+            <p>Skip the wait. Send your order ahead and it'll be packed and ready when you arrive.</p>
+          </div>
+          <div class="service reveal">
+            <div class="service__icon">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 18h18M5 18a7 7 0 0 1 14 0M12 8V6M10 6h4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+            </div>
+            <h3>Party & Event Catering</h3>
+            <p>Birthdays, christenings, weddings and get-togethers. Trays of jollof, meats and small chops.</p>
+          </div>
+          <div class="service reveal">
+            <div class="service__icon">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="3" width="16" height="18" rx="2" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M8 7h8M8 11h8M8 15h5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+            </div>
+            <h3>Office & Group Orders</h3>
+            <p>Treat the team to something different. Bulk lunch orders made easy for local businesses.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ WHY US ============ -->
+    <section class="section" id="why">
+      <div class="container why">
+        <div class="why__visual reveal" aria-hidden="true">
+          <div class="plate">
+            <div class="plate__rice"></div>
+            <div class="plate__chicken"></div>
+            <div class="plate__plantain"><i></i><i></i><i></i></div>
+            <div class="plate__salad"></div>
+          </div>
+          <div class="sticker sticker--a">Made<br>fresh</div>
+          <div class="sticker sticker--b">100%<br>Naija</div>
+        </div>
+        <div class="why__copy">
+          <div class="reveal">
+            <p class="eyebrow">Why Samfik</p>
+            <h2>Taste the difference that home-style cooking makes</h2>
+          </div>
+          <ul class="why__list">
+            <li class="reveal">
+              <span class="num">01</span>
+              <div><h3>Authentic recipes</h3><p>Traditional Nigerian dishes cooked the true West African way, no shortcuts and no watered-down flavour.</p></div>
+            </li>
+            <li class="reveal">
+              <span class="num">02</span>
+              <div><h3>Cooked fresh, served hot</h3><p>Food is prepared at the stall throughout the day so it hits your plate full of flavour.</p></div>
+            </li>
+            <li class="reveal">
+              <span class="num">03</span>
+              <div><h3>Generous portions</h3><p>Proper plates that actually fill you up, at prices that make it an easy everyday lunch.</p></div>
+            </li>
+            <li class="reveal">
+              <span class="num">04</span>
+              <div><h3>Local & friendly</h3><p>An independent family-style stall at the heart of Macclesfield Market Hall. Come say hello!</p></div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ HOW IT WORKS ============ -->
+    <section class="section section--tint" id="how">
+      <div class="container">
+        <div class="section__head reveal">
+          <p class="eyebrow">Pre-ordering is easy</p>
+          <h2>Your jollof, ready in 3 steps</h2>
+        </div>
+        <ol class="steps">
+          <li class="reveal"><span>1</span><h3>Send your order</h3><p>Use the form, WhatsApp or call 07404 531445.</p></li>
+          <li class="reveal"><span>2</span><h3>We confirm</h3><p>We'll reply with your total and pickup time.</p></li>
+          <li class="reveal"><span>3</span><h3>Collect & enjoy</h3><p>Pick up hot from Unit B4, Macclesfield Market Hall.</p></li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ============ REVIEWS ============ -->
+    <!-- NOTE: The reviews below are SAMPLE PLACEHOLDERS. Replace them with real customer reviews (e.g. copied from Google) before going live. -->
+    <section class="section section--dark" id="reviews">
+      <div class="container">
+        <div class="section__head reveal">
+          <p class="eyebrow">Reviews</p>
+          <h2>What our customers say</h2>
+        </div>
+        <div class="reviews">
+          <figure class="review reveal">
+            <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
+            <blockquote>"Best jollof I've had outside of Lagos. Smoky, perfectly spiced, and the portion was huge. I'm a regular now."</blockquote>
+            <figcaption><span class="avatar">T</span><div><strong>Tolu A.</strong><small>Customer</small></div></figcaption>
+          </figure>
+          <figure class="review reveal">
+            <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
+            <blockquote>"Never tried Nigerian food before. The lamb suya was incredible and the puff puff is dangerously good. Lovely people too."</blockquote>
+            <figcaption><span class="avatar">J</span><div><strong>James R.</strong><small>Customer</small></div></figcaption>
+          </figure>
+          <figure class="review reveal">
+            <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
+            <blockquote>"Ordered party trays for my daughter's birthday. Everything was ready on time, still hot, and the guests loved the peppered chicken."</blockquote>
+            <figcaption><span class="avatar">C</span><div><strong>Chioma E.</strong><small>Catering customer</small></div></figcaption>
+          </figure>
+        </div>
+        <div class="reviews__cta reveal">
+          <a class="btn btn--ghost-light" href="https://www.google.com/search?kgmid=/g/11zzpl5hsy" target="_blank" rel="noopener">Read & leave a Google review</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ VISIT ============ -->
+    <section class="section" id="visit">
+      <div class="container visit">
+        <div class="visit__info reveal">
+          <p class="eyebrow">Find us</p>
+          <h2>Come hungry. Leave happy.</h2>
+          <div class="info-block">
+            <h3>Address</h3>
+            <p>Unit B4, Macclesfield Market Hall<br>Grosvenor Centre, Macclesfield<br>SK11 6AJ</p>
+            <a class="link" href="https://www.google.com/maps/search/?api=1&query=Samfik+Foods+Macclesfield+Market+Hall+SK11+6AJ" target="_blank" rel="noopener">Get directions →</a>
+          </div>
+          <div class="info-block">
+            <h3>Opening hours</h3>
+            <table class="hours" id="hoursTable">
+              <tr data-day="1"><td>Monday</td><td>10:00 – 16:30</td></tr>
+              <tr data-day="2"><td>Tuesday</td><td>10:00 – 16:30</td></tr>
+              <tr data-day="3"><td>Wednesday</td><td>10:00 – 16:30</td></tr>
+              <tr data-day="4"><td>Thursday</td><td>10:00 – 16:30</td></tr>
+              <tr data-day="5"><td>Friday</td><td>10:00 – 16:30</td></tr>
+              <tr data-day="6"><td>Saturday</td><td>10:00 – 16:30</td></tr>
+              <tr data-day="0"><td>Sunday</td><td>Closed</td></tr>
+            </table>
+          </div>
+          <div class="info-block">
+            <h3>Phone</h3>
+            <a class="phone" href="tel:+447404531445">+44 7404 531445</a>
+          </div>
+        </div>
+        <div class="visit__map reveal">
+          <iframe title="Map showing Samfik Foods at Macclesfield Market Hall" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+            src="https://www.google.com/maps?q=Macclesfield+Market+Hall,+Grosvenor+Centre,+Macclesfield+SK11+6AJ&output=embed"></iframe>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ FAQ ============ -->
+    <section class="section section--tint" id="faq">
+      <div class="container faq">
+        <div class="section__head reveal">
+          <p class="eyebrow">FAQ</p>
+          <h2>Good to know</h2>
+        </div>
+        <div class="faq__list">
+          <details class="reveal">
+            <summary>Is the food very spicy?</summary>
+            <p>Some dishes like suya and peppered chicken have a proper kick, but we're happy to go easy on the heat. Just ask when you order.</p>
+          </details>
+          <details class="reveal">
+            <summary>Can I pre-order for collection?</summary>
+            <p>Yes! Send us your order via the form, WhatsApp or a phone call and we'll have it ready for your chosen time during opening hours.</p>
+          </details>
+          <details class="reveal">
+            <summary>Do you cater for parties and events?</summary>
+            <p>We do. We prepare party trays of jollof rice, peppered meats, suya, meat pies and puff puff. Give us as much notice as you can, especially for large numbers.</p>
+          </details>
+          <details class="reveal">
+            <summary>I've never tried Nigerian food. What should I get?</summary>
+            <p>Start with jollof rice and chicken suya, then finish with a bag of puff puff. It's the perfect introduction.</p>
+          </details>
+          <details class="reveal">
+            <summary>Where is parking?</summary>
+            <p>We're inside Macclesfield Market Hall in the Grosvenor Centre, with town-centre car parks a short walk away.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CTA BAND ============ -->
+    <section class="cta-band">
+      <div class="container cta-band__inner reveal">
+        <div>
+          <h2>Hungry yet?</h2>
+          <p>Your next favourite meal is waiting at Unit B4.</p>
+        </div>
+        <div class="cta-band__actions">
+          <a href="#order" class="btn btn--dark">Place an Order</a>
+          <a href="tel:+447404531445" class="btn btn--outline-dark">Call 07404 531445</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="footer">
+    <div class="container footer__grid">
+      <div>
+        <a href="#top" class="logo logo--light"><span class="logo__mark">S</span><span class="logo__text">Samfik<em>Foods</em></span></a>
+        <p>Authentic Nigerian food, cooked with love in Macclesfield.</p>
+      </div>
+      <div>
+        <h4>Visit</h4>
+        <p>Unit B4, Macclesfield Market Hall<br>Grosvenor Centre, SK11 6AJ</p>
+      </div>
+      <div>
+        <h4>Hours</h4>
+        <p>Mon–Sat: 10:00 – 16:30<br>Sunday: Closed</p>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <p><a href="tel:+447404531445">+44 7404 531445</a><br><a href="https://wa.me/447404531445" target="_blank" rel="noopener">Message on WhatsApp</a></p>
+      </div>
+    </div>
+    <div class="container footer__bottom">
+      <p>© <span id="year"></span> Samfik Foods. All rights reserved.</p>
+      <a href="#top">Back to top ↑</a>
+    </div>
+  </footer>
+
+  <!-- Mobile sticky action bar -->
+  <div class="mobile-bar">
+    <a href="tel:+447404531445">Call</a>
+    <a href="#order" class="mobile-bar__primary">Order Now</a>
+    <a href="https://www.google.com/maps/search/?api=1&query=Samfik+Foods+Macclesfield+Market+Hall+SK11+6AJ" target="_blank" rel="noopener">Directions</a>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
