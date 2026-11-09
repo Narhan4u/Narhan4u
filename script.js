@@ -36,7 +36,7 @@
     if (row) row.classList.add("is-today");
   } catch (e) { /* ignore */ }
 
-  // Menu filter
+  // Menu filter tabs
   var tabs = document.querySelectorAll(".tab");
   var dishes = document.querySelectorAll(".dish");
   tabs.forEach(function (tab) {
@@ -92,6 +92,7 @@
     note.textContent = "Thanks! WhatsApp has opened. Just hit send and we'll get back to you.";
     note.classList.add("is-success");
   });
+
 
   // Reveal on scroll
   var els = document.querySelectorAll(".reveal");

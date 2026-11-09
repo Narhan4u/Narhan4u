@@ -47,10 +47,11 @@
         <span class="logo__text">Samfik<em>Foods</em></span>
       </a>
       <nav class="nav__links" id="navLinks" aria-label="Main">
-        <a href="#menu">Menu</a>
+        <a href="#favourites">Menu</a>
+        <a href="#menu">Order Online</a>
         <a href="#services">Services</a>
         <a href="#why">Why Us</a>
-        <a href="#reviews">Reviews</a>
+        
         <a href="#visit">Visit</a>
         <a href="#faq">FAQ</a>
       </nav>
@@ -137,10 +138,10 @@
     </section>
 
     <!-- ============ MENU ============ -->
-    <section class="section" id="menu">
+    <section class="section" id="favourites">
       <div class="container">
         <div class="section__head reveal">
-          <p class="eyebrow">The Menu</p>
+          <p class="eyebrow">Our Food</p>
           <h2>Our crowd favourites</h2>
           <p>Every plate is seasoned with our own spice blends and cooked fresh at the stall. Here's what Macclesfield keeps coming back for.</p>
         </div>
@@ -161,7 +162,7 @@
             <div class="dish__body">
               <h3>Nigerian Jollof Rice</h3>
               <p>Long-grain rice slow-cooked in a rich tomato & pepper base until smoky. Proper party jollof.</p>
-              <div class="dish__meta"><span class="heat">🌶🌶</span><a href="#order" class="dish__cta" data-dish="Jollof Rice">Order →</a></div>
+              <div class="dish__meta"><span class="heat">🌶🌶</span><a href="#menu" class="dish__cta" data-open="Jollof Rice">Order →</a></div>
             </div>
           </article>
 
@@ -172,7 +173,7 @@
             <div class="dish__body">
               <h3>Chicken Suya</h3>
               <p>Tender chicken skewers rubbed in yaji, our peanut-chilli suya spice, then flame-grilled.</p>
-              <div class="dish__meta"><span class="heat">🌶🌶🌶</span><a href="#order" class="dish__cta" data-dish="Chicken Suya">Order →</a></div>
+              <div class="dish__meta"><span class="heat">🌶🌶🌶</span><a href="#menu" class="dish__cta" data-open="Chicken Suya">Order →</a></div>
             </div>
           </article>
 
@@ -183,7 +184,7 @@
             <div class="dish__body">
               <h3>Lamb Suya</h3>
               <p>Thin-sliced lamb, deeply spiced and charred at the edges. Served with onions and extra yaji.</p>
-              <div class="dish__meta"><span class="heat">🌶🌶🌶</span><a href="#order" class="dish__cta" data-dish="Lamb Suya">Order →</a></div>
+              <div class="dish__meta"><span class="heat">🌶🌶🌶</span><a href="#menu" class="dish__cta" data-open="Lamb Suya">Order →</a></div>
             </div>
           </article>
 
@@ -192,7 +193,7 @@
             <div class="dish__body">
               <h3>Peppered Chicken & Turkey</h3>
               <p>Fried until golden, then tossed in a fiery scotch-bonnet pepper sauce. Pick chicken or turkey.</p>
-              <div class="dish__meta"><span class="heat">🌶🌶🌶</span><a href="#order" class="dish__cta" data-dish="Peppered Chicken / Turkey">Order →</a></div>
+              <div class="dish__meta"><span class="heat">🌶🌶🌶</span><a href="#menu" class="dish__cta" data-open="Peppered Chicken">Order →</a></div>
             </div>
           </article>
 
@@ -203,7 +204,7 @@
             <div class="dish__body">
               <h3>Loaded Fries</h3>
               <p>Crispy fries piled high with suya meat, peppers and sauce. Comfort food with a kick.</p>
-              <div class="dish__meta"><span class="heat">🌶</span><a href="#order" class="dish__cta" data-dish="Loaded Fries">Order →</a></div>
+              <div class="dish__meta"><span class="heat">🌶</span><a href="#menu" class="dish__cta" data-open="Loaded Fries">Order →</a></div>
             </div>
           </article>
 
@@ -212,7 +213,7 @@
             <div class="dish__body">
               <h3>Nigerian Meat Pies</h3>
               <p>Buttery, flaky pastry packed with seasoned minced meat, potato and carrot. Perfect on the go.</p>
-              <div class="dish__meta"><span class="heat mild">Mild</span><a href="#order" class="dish__cta" data-dish="Meat Pies">Order →</a></div>
+              <div class="dish__meta"><span class="heat mild">Mild</span><a href="#menu" class="dish__cta" data-open="Meat Pie">Order →</a></div>
             </div>
           </article>
 
@@ -223,7 +224,7 @@
             <div class="dish__body">
               <h3>Puff Puff</h3>
               <p>Soft, pillowy, lightly sweet dough balls fried golden. Impossible to stop at one.</p>
-              <div class="dish__meta"><span class="heat mild">Sweet</span><a href="#order" class="dish__cta" data-dish="Puff Puff">Order →</a></div>
+              <div class="dish__meta"><span class="heat mild">Sweet</span><a href="#menu" class="dish__cta" data-open="Puff Puff">Order →</a></div>
             </div>
           </article>
 
@@ -236,9 +237,76 @@
             </div>
           </article>
         </div>
-        <p class="menu-note reveal">Menu changes with the day. Call <a href="tel:+447404531445">07404 531445</a> to check today's specials and prices.</p>
+        <p class="menu-note reveal">Ready to order? <a href="#menu">Jump to the order menu</a> or call <a href="tel:+447404531445">07404 531445</a>.</p>
       </div>
     </section>
+
+    <!-- ============ ORDER MENU ============ -->
+    <!-- Menu items, options and prices live in menu.js -->
+    <section class="section omenu" id="menu">
+      <div class="container">
+        <div class="section__head reveal">
+          <p class="eyebrow">Order Online</p>
+          <h2>Our menu</h2>
+          <p>Tap a dish to choose your options, then add it to your order. Mix and match rice and meats however you like.</p>
+        </div>
+
+        <div class="omenu__layout">
+          <nav class="omenu__cats" id="menuCats" aria-label="Menu categories"></nav>
+          <div class="omenu__list" id="menuList"></div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Item options pop-up -->
+    <div class="modal" id="itemModal" hidden>
+      <div class="modal__backdrop" data-close></div>
+      <div class="modal__panel" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+        <button class="modal__close" data-close aria-label="Close">×</button>
+        <div class="modal__body">
+          <div class="modal__img" id="modalImg"></div>
+          <div class="modal__head">
+            <h3 id="modalTitle"></h3>
+            <span class="modal__price" id="modalPrice"></span>
+          </div>
+          <p class="modal__desc" id="modalDesc"></p>
+          <form id="modalOptions"></form>
+        </div>
+        <div class="modal__foot">
+          <div class="qty qty--light">
+            <button type="button" id="mQtyMinus" aria-label="Decrease quantity">−</button>
+            <output id="mQty">1</output>
+            <button type="button" id="mQtyPlus" aria-label="Increase quantity">+</button>
+          </div>
+          <button type="button" class="btn btn--primary modal__add" id="modalAdd"><span>Add to order</span><span id="modalAddPrice"></span></button>
+        </div>
+        <p class="modal__error" id="modalError" role="alert"></p>
+      </div>
+    </div>
+
+    <!-- Basket -->
+    <button class="basket-btn" id="basketBtn" hidden>
+      <span>🛍 Your order</span><b id="basketCount">0</b><span id="basketTotalBtn"></span>
+    </button>
+    <aside class="basket" id="basket" hidden aria-label="Your order">
+      <div class="modal__backdrop" data-bclose></div>
+      <div class="basket__panel">
+        <div class="basket__head">
+          <h3>Your order</h3>
+          <button class="modal__close" data-bclose aria-label="Close">×</button>
+        </div>
+        <ul class="basket__items" id="basketItems"></ul>
+        <div class="basket__total" id="basketTotal"></div>
+        <form class="basket__form" id="basketForm" novalidate>
+          <label>Name<input name="name" required autocomplete="name"></label>
+          <label>Phone<input name="phone" type="tel" required autocomplete="tel"></label>
+          <label>Collection time<input name="time" placeholder="e.g. today 1:30pm"></label>
+          <button class="btn btn--primary btn--block" type="submit">Send order on WhatsApp →</button>
+          <p class="basket__note" id="basketNote">We'll confirm your total and collection time. Pay at the stall.</p>
+        </form>
+      </div>
+    </aside>
 
     <!-- ============ SERVICES ============ -->
     <section class="section section--dark" id="services">
@@ -336,20 +404,6 @@
     </section>
 
     <!-- ============ REVIEWS ============ -->
-    <!-- Reviews: add real customer reviews here later (see git history for the review card markup). -->
-    <section class="section section--dark" id="reviews">
-      <div class="container">
-        <div class="section__head reveal">
-          <p class="eyebrow">Reviews</p>
-          <h2>Tried our food? Tell Macclesfield.</h2>
-          <p>See what customers are saying about Samfik Foods on Google, and leave a review of your own. It helps a small local business more than you know.</p>
-        </div>
-        <div class="reviews__cta reveal">
-          <a class="btn btn--primary" href="https://www.google.com/search?kgmid=/g/11zzpl5hsy" target="_blank" rel="noopener">Read & leave a Google review</a>
-        </div>
-      </div>
-    </section>
-
     <!-- ============ VISIT ============ -->
     <section class="section" id="visit">
       <div class="container visit">
@@ -466,5 +520,6 @@
   </div>
 
   <script src="script.js"></script>
+  <script src="menu.js"></script>
 </body>
 </html>
