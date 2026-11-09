@@ -30,10 +30,10 @@ var MENU = [
     id: "rice", name: "Rice Plates",
     desc: "Choose your rice, pick your meat. Mix and match it your way.",
     items: [
-      { name: "Jollof Rice", price: null, img: "jollof.jpg", g: ["#e2531b", "#7a1d06"], tag: "Bestseller",
+      { name: "Jollof Rice", price: 9.00, img: "jollof.jpg", g: ["#e2531b", "#7a1d06"], tag: "Bestseller",
         desc: "Smoky party jollof with your choice of protein. Free coleslaw on request.",
         groups: [PROTEINS, COLESLAW, SPICE, EXTRAS] },
-      { name: "Rice & Beans", price: null, img: "rice-and-beans.jpg", g: ["#9a4b1c", "#3b1a08"],
+      { name: "Rice & Beans", price: 9.00, img: "rice-and-beans.jpg", g: ["#9a4b1c", "#3b1a08"],
         desc: "Rice & beans served with our house sauce and your choice of protein. Free coleslaw on request.",
         groups: [PROTEINS, COLESLAW, SPICE, EXTRAS] }
     ]
