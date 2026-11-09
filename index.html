@@ -50,7 +50,7 @@
         <a href="#menu">Menu</a>
         <a href="#services">Services</a>
         <a href="#why">Why Us</a>
-        <a href="#reviews">Reviews</a>
+        <a href="#mix">Mix &amp; Match</a>
         <a href="#visit">Visit</a>
         <a href="#faq">FAQ</a>
       </nav>
@@ -240,6 +240,68 @@
       </div>
     </section>
 
+    <!-- ============ MIX & MATCH ============ -->
+    <section class="section section--tint" id="mix">
+      <div class="container">
+        <div class="section__head reveal">
+          <p class="eyebrow">Mix &amp; Match</p>
+          <h2>Build your perfect plate</h2>
+          <p>Pick a base, choose your meat, add a treat. Your plate goes straight into the order form, ready to send.</p>
+        </div>
+
+        <div class="mix reveal">
+          <form class="mix__builder" id="mixForm">
+            <fieldset>
+              <legend><span>1</span> Choose your base</legend>
+              <div class="chips">
+                <label class="chip"><input type="radio" name="base" value="Jollof Rice" checked><span>🍚 Jollof Rice</span></label>
+                <label class="chip"><input type="radio" name="base" value="Loaded Fries"><span>🍟 Loaded Fries</span></label>
+              </div>
+            </fieldset>
+            <fieldset>
+              <legend><span>2</span> Pick your protein</legend>
+              <div class="chips">
+                <label class="chip"><input type="radio" name="protein" value="Chicken Suya" checked><span>Chicken Suya</span></label>
+                <label class="chip"><input type="radio" name="protein" value="Lamb Suya"><span>Lamb Suya</span></label>
+                <label class="chip"><input type="radio" name="protein" value="Peppered Chicken"><span>Peppered Chicken</span></label>
+                <label class="chip"><input type="radio" name="protein" value="Peppered Turkey"><span>Peppered Turkey</span></label>
+              </div>
+            </fieldset>
+            <fieldset>
+              <legend><span>3</span> Add a little extra <small>(optional)</small></legend>
+              <div class="chips">
+                <label class="chip"><input type="checkbox" name="extra" value="Meat Pie"><span>🥟 Meat Pie</span></label>
+                <label class="chip"><input type="checkbox" name="extra" value="Puff Puff"><span>🍩 Puff Puff</span></label>
+              </div>
+            </fieldset>
+            <fieldset>
+              <legend><span>4</span> How hot?</legend>
+              <div class="chips">
+                <label class="chip"><input type="radio" name="heat" value="Mild"><span>Mild</span></label>
+                <label class="chip"><input type="radio" name="heat" value="Medium" checked><span>🌶 Medium</span></label>
+                <label class="chip"><input type="radio" name="heat" value="Hot"><span>🌶🌶🌶 Naija hot</span></label>
+              </div>
+            </fieldset>
+          </form>
+
+          <aside class="mix__plate" aria-live="polite">
+            <p class="eyebrow">Your plate</p>
+            <ul class="mix__list" id="mixList"></ul>
+            <div class="mix__qty">
+              <span>Quantity</span>
+              <div class="qty">
+                <button type="button" id="qtyMinus" aria-label="Fewer plates">−</button>
+                <output id="qtyVal">1</output>
+                <button type="button" id="qtyPlus" aria-label="More plates">+</button>
+              </div>
+            </div>
+            <button type="button" class="btn btn--primary btn--block" id="mixAdd">Add to My Order →</button>
+            <p class="mix__note" id="mixNote">Added plates appear in the order form at the top.</p>
+          </aside>
+        </div>
+      </div>
+    </section>
+
     <!-- ============ SERVICES ============ -->
     <section class="section section--dark" id="services">
       <div class="container">
@@ -336,20 +398,6 @@
     </section>
 
     <!-- ============ REVIEWS ============ -->
-    <!-- Reviews: add real customer reviews here later (see git history for the review card markup). -->
-    <section class="section section--dark" id="reviews">
-      <div class="container">
-        <div class="section__head reveal">
-          <p class="eyebrow">Reviews</p>
-          <h2>Tried our food? Tell Macclesfield.</h2>
-          <p>See what customers are saying about Samfik Foods on Google, and leave a review of your own. It helps a small local business more than you know.</p>
-        </div>
-        <div class="reviews__cta reveal">
-          <a class="btn btn--primary" href="https://www.google.com/search?kgmid=/g/11zzpl5hsy" target="_blank" rel="noopener">Read & leave a Google review</a>
-        </div>
-      </div>
-    </section>
-
     <!-- ============ VISIT ============ -->
     <section class="section" id="visit">
       <div class="container visit">
