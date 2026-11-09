@@ -36,7 +36,7 @@
     if (row) row.classList.add("is-today");
   } catch (e) { /* ignore */ }
 
-  // Menu filter
+  // Menu filter tabs
   var tabs = document.querySelectorAll(".tab");
   var dishes = document.querySelectorAll(".dish");
   tabs.forEach(function (tab) {
@@ -93,42 +93,6 @@
     note.classList.add("is-success");
   });
 
-
-  // Mix & Match builder
-  var mixForm = document.getElementById("mixForm");
-  if (mixForm) {
-    var qty = 1;
-    var qtyVal = document.getElementById("qtyVal");
-    var mixList = document.getElementById("mixList");
-    var mixNote = document.getElementById("mixNote");
-    function plate() {
-      var f = mixForm.elements;
-      var extras = Array.prototype.filter.call(mixForm.querySelectorAll('input[name="extra"]:checked'), function () { return true; }).map(function (i) { return i.value; });
-      if (f.coleslaw.checked) extras.unshift("Free coleslaw");
-      return { base: f.base.value, protein: f.protein.value, extras: extras, heat: f.heat.value };
-    }
-    function render() {
-      var p = plate();
-      var rows = [["Base", p.base], ["Protein", p.protein], ["Extras", p.extras.length ? p.extras.join(" + ") : "None"], ["Spice", p.heat]];
-      mixList.innerHTML = rows.map(function (r) { return "<li><span>" + r[0] + "</span><b>" + r[1] + "</b></li>"; }).join("");
-      qtyVal.textContent = qty;
-    }
-    mixForm.addEventListener("change", render);
-    document.getElementById("qtyMinus").addEventListener("click", function () { if (qty > 1) { qty--; render(); } });
-    document.getElementById("qtyPlus").addEventListener("click", function () { if (qty < 50) { qty++; render(); } });
-    document.getElementById("mixAdd").addEventListener("click", function () {
-      var p = plate();
-      var line = qty + "x " + p.base + " with " + p.protein + (p.extras.length ? " + " + p.extras.join(" + ") : "") + " (" + p.heat + ")";
-      var msg = form.elements.message;
-      msg.value = (msg.value ? msg.value + "\n" : "") + line;
-      form.elements.type.value = "Takeaway pre-order";
-      mixNote.textContent = "Added: " + line + ". Scroll up to send your order.";
-      mixNote.classList.add("is-success");
-      document.getElementById("order").scrollIntoView({ behavior: "smooth", block: "center" });
-      setTimeout(function () { form.elements.name.focus({ preventScroll: true }); }, 700);
-    });
-    render();
-  }
 
   // Reveal on scroll
   var els = document.querySelectorAll(".reveal");
