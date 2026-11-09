@@ -44,7 +44,7 @@ var MENU = [
     items: [
       { name: "Chicken Suya", price: 6.99, img: "chicken-suya.jpg", g: ["#b5461a", "#3b1407"], tag: "Street classic",
         desc: "Tender chicken skewers rubbed in yaji, then flame-grilled.", groups: [SPICE] },
-      { name: "Lamb Suya", price: null, img: "lamb-suya.jpg", g: ["#8f2d12", "#2a0d05"], tag: "Must try",
+      { name: "Lamb Suya", price: 7.99, img: "lamb-suya.jpg", g: ["#8f2d12", "#2a0d05"], tag: "Must try",
         desc: "Thin-sliced lamb, deeply spiced and charred at the edges, with onions.", groups: [SPICE] }
     ]
   },
@@ -52,9 +52,9 @@ var MENU = [
     id: "pepper", name: "Peppered Meats",
     desc: "Fried until golden, then tossed in a fiery scotch-bonnet pepper sauce.",
     items: [
-      { name: "Peppered Chicken", price: null, img: "peppered-chicken.jpg", g: ["#c7321d", "#4a0e07"],
+      { name: "Peppered Chicken", price: 6.99, img: "peppered-chicken.jpg", g: ["#c7321d", "#4a0e07"],
         desc: "Golden chicken tossed in our pepper sauce.", groups: [SPICE] },
-      { name: "Peppered Turkey", price: null, img: "peppered-turkey.jpg", g: ["#a8281a", "#3d0b05"],
+      { name: "Peppered Turkey", price: 8.99, img: "peppered-turkey.jpg", g: ["#a8281a", "#3d0b05"],
         desc: "Juicy turkey tossed in our pepper sauce.", groups: [SPICE] }
     ]
   },
@@ -62,9 +62,9 @@ var MENU = [
     id: "snacks", name: "Snacks & Sides",
     desc: "Perfect on the go, or on the side.",
     items: [
-      { name: "Loaded Fries", price: null, img: "loaded-fries.jpg", g: ["#e0a01e", "#7a3d06"], tag: "Naija twist",
+      { name: "Loaded Fries", price: 5.99, img: "loaded-fries.jpg", g: ["#e0a01e", "#7a3d06"], tag: "Naija twist",
         desc: "Crispy fries piled high with suya meat, peppers and sauce.", groups: [SPICE] },
-      { name: "Meat Pie", price: null, img: "meat-pie.jpg", g: ["#d8a65a", "#6b3d12"],
+      { name: "Meat Pie", price: 1.99, img: "meat-pie.jpg", g: ["#d8a65a", "#6b3d12"],
         desc: "Buttery, flaky pastry packed with seasoned minced meat, potato and carrot.", groups: [] }
     ]
   },
@@ -72,8 +72,8 @@ var MENU = [
     id: "sweet", name: "Sweet Treats",
     desc: "Save room for these.",
     items: [
-      { name: "Puff Puff", price: null, img: "puff-puff.jpg", g: ["#f0b448", "#8a4a10"], tag: "Sweet treat",
-        desc: "Soft, pillowy, lightly sweet dough balls fried golden.", groups: [] }
+      { name: "Puff Puff", price: 1.50, img: "puff-puff.jpg", g: ["#f0b448", "#8a4a10"], tag: "Sweet treat",
+        desc: "3 soft, pillowy, lightly sweet dough balls fried golden.", groups: [] }
     ]
   }
 ];
