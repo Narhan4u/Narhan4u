@@ -42,7 +42,7 @@ var MENU = [
     id: "grill", name: "Suya & Grill",
     desc: "Flame-grilled and rubbed in yaji, our peanut-chilli suya spice.",
     items: [
-      { name: "Chicken Suya", price: null, img: "chicken-suya.jpg", g: ["#b5461a", "#3b1407"], tag: "Street classic",
+      { name: "Chicken Suya", price: 6.99, img: "chicken-suya.jpg", g: ["#b5461a", "#3b1407"], tag: "Street classic",
         desc: "Tender chicken skewers rubbed in yaji, then flame-grilled.", groups: [SPICE] },
       { name: "Lamb Suya", price: null, img: "lamb-suya.jpg", g: ["#8f2d12", "#2a0d05"], tag: "Must try",
         desc: "Thin-sliced lamb, deeply spiced and charred at the edges, with onions.", groups: [SPICE] }
