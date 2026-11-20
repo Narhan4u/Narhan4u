@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 1080" width="1080" height="1080">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#140f2e"/>
+      <stop offset="0.62" stop-color="#2a1450"/>
+      <stop offset="1" stop-color="#0b0a1c"/>
+    </linearGradient>
+    <linearGradient id="sun" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ffd36e"/>
+      <stop offset="0.5" stop-color="#ff7a59"/>
+      <stop offset="1" stop-color="#e0306f"/>
+    </linearGradient>
+    <linearGradient id="sea" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#1690a6"/>
+      <stop offset="1" stop-color="#0b0a1c"/>
+    </linearGradient>
+    <clipPath id="sunclip">
+      <circle cx="540" cy="520" r="330"/>
+    </clipPath>
+    <filter id="glow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="22" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="14" stdDeviation="14" flood-color="#0b0a1c" flood-opacity="0.75"/>
+    </filter>
+  </defs>
+  <rect width="1080" height="1080" fill="url(#sky)"/>
+  <!-- sun with retro slits -->
+  <g filter="url(#glow)">
+    <circle cx="540" cy="520" r="330" fill="url(#sun)"/>
+  </g>
+  <g clip-path="url(#sunclip)" fill="#2a1450">
+    <rect x="200" y="560" width="680" height="10"/>
+    <rect x="200" y="610" width="680" height="16"/>
+    <rect x="200" y="664" width="680" height="22"/>
+    <rect x="200" y="722" width="680" height="28"/>
+    <rect x="200" y="782" width="680" height="34"/>
+  </g>
+  <!-- sea -->
+  <rect x="0" y="800" width="1080" height="280" fill="url(#sea)"/>
+  <g fill="#ffb38a" opacity="0.85">
+    <rect x="330" y="830" width="420" height="8" rx="4"/>
+    <rect x="390" y="868" width="300" height="7" rx="3.5"/>
+    <rect x="450" y="902" width="180" height="6" rx="3"/>
+  </g>
+  <!-- palm, right -->
+  <g fill="#0b0a1c">
+    <path d="M905 800 C 900 700, 880 600, 840 500 L 856 494 C 900 590, 925 700, 928 800 Z"/>
+    <path d="M846 498 C 800 440, 720 430, 660 470 C 730 455, 790 465, 846 498 Z"/>
+    <path d="M846 498 C 820 420, 760 380, 700 380 C 770 405, 815 445, 846 498 Z"/>
+    <path d="M846 498 C 860 420, 910 380, 970 385 C 915 410, 875 450, 846 498 Z"/>
+    <path d="M846 498 C 910 450, 990 450, 1040 500 C 980 475, 910 480, 846 498 Z"/>
+    <path d="M846 498 C 890 500, 940 540, 955 600 C 920 555, 885 525, 846 498 Z"/>
+    <path d="M846 498 C 800 510, 760 550, 750 610 C 780 565, 810 530, 846 498 Z"/>
+  </g>
+  <!-- F monogram -->
+  <g filter="url(#shadow)">
+    <text x="540" y="700" text-anchor="middle" font-family="Inter Display" font-weight="900" font-size="520" fill="#ffffff" transform="skewX(-9) translate(72 0)" letter-spacing="-10">F</text>
+  </g>
+</svg>
